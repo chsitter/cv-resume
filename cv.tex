@@ -1,6 +1,5 @@
 \documentclass[11pt,a4paper]{my_cv}
 
-
 \begin{document}
 
 \begin{cvheader}
@@ -25,27 +24,66 @@ Integer tincidunt.
 Cras dapibus.
 
 \section{Professional Expertise}
-\expertise
-{Programming Languages}{C, Java, Lua, Python, C++, JavaScript, SQL, Rust, LateX}
-{Operating Systems}{RHEL/Fedora, Arch Linux, Debian/Ubuntu, Mac OS, Windows}
-{Technologies}{gcc/gdb, llvm/lldb, valgrind, strace, make, Premake, Cmake, OpenSSL, Gradle, Maven, vim, tmux, TensorFlow, scikit-learn, TCP/IP, UDP, HTTP, XML, UML, databases}
-{Methodologies}{Agile, Scrum, Kanban, Design Patterns}
+\begin{expertise}
+    \expertiseitem[Programming Languages]{C, Java, Lua, Python, C++, JavaScript, SQL, Rust, LateX}
+    \expertiseitem[Operating Systems]{RHEL/Fedora, Arch Linux, Debian/Ubuntu, Mac OS, Windows}
+    \expertiseitem[Technologies]{gcc/gdb, llvm/lldb, valgrind, strace, make, Premake, Cmake, OpenSSL, Gradle, Maven, vim, tmux, TensorFlow, scikit-learn, TCP/IP, UDP, HTTP, XML, UML, databases}
+    \expertiseitem[Methodologies]{Agile, Scrum, Kanban, Design Patterns}
+\end{expertise}
 
 \section{Employmet}
-\workplace{Platform Architect}{Caplin Systems Ltd.}{Feb 2013 - current}
-\workitems
-{thing 1}
-{thing 2}
-{thing 3}
+\workplace{Platform Architect}{Caplin Systems Ltd.}{Dec 2015 - Current}
+\begin{itemize}
+    \item{thing 1}
+    \item{thing 2}
+    \item{thing 3}
+\end{itemize}
+
+\workplace{Technical Team Lead}{Caplin Systems Ltd.}{Nov 2014 - Dec 2015}
+\workplace{Software Engineer}{Caplin Systems Ltd.}{Feb 2013 - Nov 2014}
 
 \workplace{Systems Engineer}{Infineon Technologies Austria}{Mar 2010 - Aug 2012}
 
 \section{Education}
-\datedsubsection{University College London}{Sept 2016 - Sept 2017}
+\education{University College London}{MSc Web Science and Big Data}{Sep 2016 - Sep 2017}
+\begin{projects}{10em}
+    \project[Blockchain ADR]{MSc Dissertation about using Blockchain to create an automated online alternative dispute resolution system to avoid litigation based with use of blockchain proofs and smart contracts.}
+\end{projects}
+\begin{modules}
+    \module{Distributed Systems and Security}
+    \module{Supervised Learning}
+    \module{Applied Machine Learning}
+    \module{Machine Vision}
+    \module{Statistical NLP}
+    \module{Web Economics}
+    \module{Information Retrieval}
+    \module{Complex Networks and Web}
+\end{modules}
 
-\datedsubsection{Westminster University London}{Sept 2012 - Dec 2012}
+\education{Westminster University London}{Erasmus exchange}{Sep 2012 - Dec 2012}
 
-\datedsubsection{Alpen-Adria University Klagenfurt}{Sept 2009 - Sept 2012}
+\education{Alpen-Adria University Klagenfurt}{BSc Informatics}{Sep 2009 - Sep 2012}
+\begin{projects}{10em}
+    \project[VoiCCN]{Dissertation investigating the feasibility of implementing SIP based Voice over IP services on top of Content Centric Networks, in particular an implementation called CCNx}
+    \project[CEP/RETE]{Project and Dissertation about using CEP systems, in particular TIBCO Business Events, for the monitoring and control of the automated manufacturing lines at Infineon Technologies.}
+    \project[IT Services Website]{Developed a new Website for the Universities IT Services Department based on Drupal.}
+\end{projects}
+%Bachelor Thesis: Voice over Content Centric Networks (VoCCN) 2,0
+%Bachelor Thesis: Erstellung einer neuen ZID Website 4,0
+\begin{modules}
+    \module{Distributed Systems}
+    \module{Operating Systems}
+    \module{Compiler Construcion}
+    \module{Algorithms and Complexity Theory}
+    \module{Selected Topics in Artificial Intelligence}
+    \module{Discrete Mathematics}
+    \module{Analysis \& Calculus}
+    \module{Databases}
+    \module{Knowledge Engineering}
+    \module{Logic and Logic Programming}
+    \module{Software Engineering I \& II}
+    \module{Object-oriented Modelling and Implementation}
+\end{modules}
 
 
 \end{document}

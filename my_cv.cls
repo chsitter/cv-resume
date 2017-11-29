@@ -3,6 +3,8 @@
 \LoadClass{article}
 \RequirePackage[a4paper,left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
 \RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
 
 
 \newcommand{\cvroad}[1]{\renewcommand{\givencvroad}{#1}}
@@ -30,29 +32,27 @@
         \givencvphone \par \givencvemail
     \end{minipage}}
 
-\newcommand{\namecontact}[3]{ 
-    {\small\begin{tabular}[c]{l} #2 \end{tabular}}\hfill
-    {\Huge\begin{tabular}[c]{c}  #1 \end{tabular}}\hfill
-    {\small\begin{tabular}[c]{r} #3 \end{tabular}}
-}
+%TODO: pass in labelwidth as an argument
+\newenvironment{expertise}{
+    \newcommand{\expertiseitem[2]}{\item[##1:]{##2}}
+    \begin{itemize}[align=parleft,topsep=0pt,parsep=0pt,partopsep=0pt,labelwidth=12em, leftmargin=\dimexpr\labelwidth+\labelsep\relax]
+}{\end{itemize}}
 
-\newcommand{\workitems}[3]{
-    \begin{itemize}
-    \item #1
-    \item #2
-    \item #3
-    \end{itemize}
-}
+\newenvironment{modules}{
+    \small
+    \newcommand{\module}[1]{\item{##1}}
+    \subsubsection{Modules included:}
+    \begin{multicols}{2}
+    \begin{itemize}[topsep=0pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}
+\end{multicols}}
 
-\newcommand{\expertise}[8]{
-
-    \begin{tabularx}{\linewidth}{ l X }
-        #1: & #2\\
-        #3: & #4\\
-        #5: & #6\\
-        #7: & #8\\
-    \end{tabularx}
-}
+\newenvironment{projects}[1]{
+    \small
+    \newcommand{\project[2]}{\item[##1:]{##2}}
+    \subsubsection{Projects:}
+    \begin{itemize}[align=parleft,topsep=0pt,parsep=0pt,partopsep=0pt,labelwidth=#1, leftmargin=\dimexpr\labelwidth+\labelsep+1em\relax, rightmargin=3em]
+}{\end{itemize}}
 
 \RequirePackage{titlesec}
 \titleformat{\section}
@@ -66,14 +66,16 @@
     {}{0em}
     {}
 
-\newcommand{\datedsection}[2] {
-    \section[#1]{#1 \hfill #2}
-}
+\titleformat{\subsubsection}
+    {\small\scshape\raggedright}
+    {}{0em}
+    {}
 
 \newcommand{\workplace}[3] {
     \subsection[#1]{#1 \hfill #2 \hfill #3}
 }
 
-\newcommand{\datedsubsection}[2] {
-    \subsection[#1]{#1 \hfill #2}
+\newcommand{\education}[3] {
+    %TODO: Course is not properly centered
+    \subsection[#1]{#1 \hfill \normalfont\small\texttt{#2} \hfill \scshape#3}
 }
