@@ -4,4 +4,6 @@
 cv.log
 *.pdf
 *.latexmain
+.DS_Store
+*.dvi
 resume.log
